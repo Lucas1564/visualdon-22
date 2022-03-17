@@ -17,7 +17,7 @@ const circle1 = d3.select(".mon-svg")
     .attr("cy", "50")
     .attr("r", "40")
 
-const circle2 = d3.select("svg")
+    const circle2 = d3.select("svg")
     .append("circle")
     .attr("cx", "150")
     .attr("cy", "150")
