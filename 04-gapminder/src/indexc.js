@@ -3,17 +3,6 @@ import dataIncome from '../data/income_per_person_gdppercapita_ppp_inflation_adj
 import dataLifeExpectancy from '../data/life_expectancy_years.csv'
 import dataPopulation from '../data/population_total.csv'
 
-<<<<<<< HEAD
-=======
-/*
-for (var i = 0; i < dataIncome.length; i++) {
-        console.log(dataIncome[i].country);
-}
-for (var i = 0; i < dataLifeExpectancy.length; i++) {
-    console.log(dataLifeExpectancy[i].country);
-}
-*/
->>>>>>> 65050ad10a6dcffa0f89a2e139115ea074b03f30
 for (var i = 0; i < dataPopulation.length; i++) {
     console.log(cleanData(dataPopulation[i]["2021"]));
 }
@@ -37,48 +26,6 @@ const margin = {
     width = window.innerWidth * 0.7 - margin.left - margin.right,
     height = window.innerHeight * 0.9 - margin.top - margin.bottom;
 
-<<<<<<< HEAD
-=======
-const svgGraph = d3.select('body').append('svg').attr('class', 'graph');
-
-svgGraph.attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-const x = d3.scaleLinear()
-    .domain([minGDP, maxGDP])
-    .range([10, width]);
-
-svgGraph.append('g')
-    .attr("transform", "translate(5," + height + ")")
-    .call(d3.axisTop(x).ticks(35).tickSize(10)).selectAll("text")
-    .style("text-anchor", "end")
-    .attr("dx", "-0.6em")
-    .attr("dy", "2.4em")
-    .attr("transform", "rotate(-65)");
-
-//Pow pour avoir une échelle exponentielle qui se concentre vers 0
-const y = d3.scalePow()
-    .domain([0, maxExpectancy])
-    .range([height, 0])
-    .exponent(3);
-
-svgGraph.append('g')
-    .call(d3.axisRight(y).ticks(10)); 
-    
-//Sqrt pour équilibrer les tailles des cercles 
-const r = d3.scaleSqrt()
-    .domain([minPop, maxPop])
-    .range([0, 30]);
-
-//Circles
-for (var i = 0; i < dataPopulation.length; i++) {
-    svgGraph.append("circle")
-    .attr("cx", x(cleanData(dataIncome[i]["2021"]))).attr("cy", y(dataLifeExpectancy[i]["2021"])).attr("r", r(cleanData(dataPopulation[i]["2021"]))).style("fill", "blue");
-}
-
->>>>>>> 65050ad10a6dcffa0f89a2e139115ea074b03f30
 //Clean Data
 function cleanData(data) {
     if (isNaN(data)) {
@@ -96,7 +43,6 @@ function cleanData(data) {
     }
     return data;
 }
-<<<<<<< HEAD
 
 //Animation with years
 const animationGraph = d3.select('body').append('div').attr('class', 'animationDiv').append('svg').attr('class', 'graph').attr('id', 'animation');
@@ -174,5 +120,3 @@ function getGraph(year) {
     }  
   }
 }
-=======
->>>>>>> 65050ad10a6dcffa0f89a2e139115ea074b03f30
